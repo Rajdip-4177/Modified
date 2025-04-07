@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Master - Ultimate Preparation Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <h1 class="logo">NEET Master</h1>
+            <p class="tagline">Comprehensive NEET UG Preparation Suite</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Homepage -->
+        <div id="homepage">
+            <div class="hero-section">
+                <h2 class="platform-title">NEET Master Pro</h2>
+                <p class="platform-subtitle">Your Gateway to Medical Excellence</p>
+            </div>
+            
+            <div class="subject-section">
+                <h3 class="section-title">Select Your Subject</h3>
+                <div class="subject-grid">
+                    <button class="subject-card biology" onclick="showChapters('Biology')">
+                        <div class="subject-icon">🧬</div>
+                        <h4>Biology</h4>
+                    </button>
+                    <button class="subject-card physics" onclick="showChapters('Physics')">
+                        <div class="subject-icon">⚛️</div>
+                        <h4>Physics</h4>
+                    </button>
+                    <button class="subject-card chemistry" onclick="showChapters('Chemistry')">
+                        <div class="subject-icon">⚗️</div>
+                        <h4>Chemistry</h4>
+                    </button>
+                </div>
+                <div id="chaptersContainer" class="chapter-list"></div>
+            </div>
+        </div>
+
+        <!-- Test Page -->
+        <div id="testPage" class="test-section" style="display: none;">
+            <div class="test-header">
+                <div class="test-meta">
+                    <h2 id="testTitle"></h2>
+                    <div class="timer-box">
+                        <span class="timer-icon">⏳</span>
+                        <span class="timer-text" id="time">04:00:00</span>
+                    </div>
+                </div>
+                <div class="test-controls">
+                    <button class="action-btn btn-exit" onclick="goHome()">Exit Test</button>
+                    <!-- Enhanced Submit Button -->
+<button class="action-btn btn-primary" onclick="submitTest()">Final Submit</button>
+
+
+
+                </div>
+            </div>
+
+            <div class="test-container">
+                <div class="navigation-sidebar">
+                    <div class="question-grid" id="navigationGrid"></div>
+                </div>
+                
+                <div class="question-panel">
+                    <div id="questionsContainer"></div>
+                    <div class="test-footer">
+                        <button class="action-btn btn-secondary" onclick="toggleMark()">Mark for Review</button>
+                        <div class="nav-buttons">
+                            <button class="action-btn btn-primary" onclick="navigateQuestion(-1)">Previous</button>
+                            <button class="action-btn btn-primary" onclick="saveAndNext()">Save & Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Results Page -->
+        <div id="resultsPage" class="results-section" style="display: none;">
+            <div class="results-header">
+                <h2>Test Results</h2>
+                <div class="score-summary">
+                    <div class="score-card">
+                        <h3>Your Score</h3>
+                        <div class="score-display" id="finalScore">0/10</div>
+                        <div class="accuracy" id="accuracy">0% Accuracy</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detailed-results">
+                <div class="results-grid">
+                    <div class="performance-chart">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                    <div class="question-analysis" id="detailedResults"></div>
+                </div>
+            </div>
+
+            <div class="results-controls">
+                <button class="action-btn btn-primary" onclick="restartTest()">Retake Test</button>
+                <button class="action-btn btn-secondary" onclick="goHome()">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
